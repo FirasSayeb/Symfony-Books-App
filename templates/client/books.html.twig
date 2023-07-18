@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Books Bought by Client</h1>
+    {% if books is empty %}
+        <p>No books have been bought by the client.</p>
+    {% else %}
+        <ul>
+            {% for book in books %}
+                <li>{{ book.getNom() }}</li>           
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

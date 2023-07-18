@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book Shop{% endblock %}
+
+{% block body %}
+    <h1>Welcome to Book Shop</h1>
+    <p>Explore our collection of books and find your next great read!</p>
+    <div>
+        <a href="{{ path('app_login') }}" class="btn btn-primary">Client Space</a>
+        <a href="{{ path('app_log') }}" class="btn btn-secondary">Author Space</a>
+    </div>   
+{% endblock %}

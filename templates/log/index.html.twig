@@ -1,0 +1,22 @@
+{# templates/login/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Login</h1>
+    
+    
+        
+    {{ form_start(form) }}
+    
+    {{ form_row(form.email) }}
+    
+    {{ form_row(form.password) }}
+    
+    <button type="submit" class="btn btn-primary">Login</button>
+        
+    {{ form_end(form) }}
+        <a href="{{ path('app_auteur_new') }}" class="btn btn-primary">Sign up</a>
+       
+{% endblock %}    
+  

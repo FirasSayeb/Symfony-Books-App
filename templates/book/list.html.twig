@@ -1,0 +1,37 @@
+{# templates/book/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Book List</h1> 
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.nom }}</td>
+                    <td>{{ book.prix }}</td>
+                    <td>
+                        {% if app.session.get('authenticated_client_id') is defined %}
+                            <a href="{{ path('app_book_buy', { 'id': book.id }) }}">Buy</a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}">Login to Buy</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}  
+        </tbody>
+    </table>
+    {# ... existing code ... #}
+
+<a href="{{ path('app_client_books') }}">My Books</a>
+
+{# ... existing code ... #}
+
+{% endblock %}
